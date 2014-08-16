@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.sourceforge.meid"
+    android:versionCode="9"
+    android:versionName="2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.microphone" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/eye"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        
+                <activity
+            android:label="@string/app_name"
+            android:name="net.sourceforge.meid.ImageSwitcherActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+                <activity
+            android:name="net.sourceforge.meid.histogram"
+            android:label="@string/app_name">
+                        <intent-filter>
+    
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+     
+
+        </activity>
+        
+        
+        <activity
+            android:name="net.sourceforge.meid.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name="net.sourceforge.meid.MyPreferenceActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="net.sourceforge.meid.OPEN"
+            android:label="@string/title_activity_open" >
+           
+        </activity>
+        
+        <activity
+            android:name="net.sourceforge.meid.Dbase"
+            android:label="@string/title_activity_dbase" >
+        </activity>
+        <activity
+            android:name="net.sourceforge.meid.DATABASE"
+            android:label="@string/title_activity_database" >
+        </activity>
+        <activity
+            android:name="net.sourceforge.meid.SIGN"
+            android:label="@string/title_activity_sign" >
+             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
